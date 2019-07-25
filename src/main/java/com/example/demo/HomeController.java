@@ -11,7 +11,7 @@ public class HomeController
     {
         return "index";
     }
-//402 adding a custom logging page//
+
     @RequestMapping("/login")
     public String login()
     {
@@ -22,5 +22,11 @@ public class HomeController
     public String admin()
     {
         return "add";
+    }
+
+    @RequestMapping("/secure")
+    public String secure()
+    {
+        return "secure";
     }
 }
