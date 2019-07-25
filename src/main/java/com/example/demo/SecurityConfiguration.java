@@ -25,7 +25,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin();
+                .formLogin().loginPage("/login").permitAll(); //402 adding a custom logging page//
     }
         @Override
          protected  void configure (AuthenticationManagerBuilder auth) throws Exception
