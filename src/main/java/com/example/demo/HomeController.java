@@ -17,4 +17,10 @@ public class HomeController
     {
         return "login";
     }
+
+    @RequestMapping("/admin")
+    public String admin()
+    {
+        return "add";
+    }
 }
