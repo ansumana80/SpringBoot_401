@@ -39,15 +39,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
     {
                 http.authorizeRequests()
                  .antMatchers("/", "/h2-console/**").permitAll()
-//                 .access("hasAnyAuthority('USER','ADMIN')")
+                 .antMatchers("/").access("hasAnyAuthority('USER','ADMIN')")
                  .antMatchers("/admin").access("hasAuthority('ADMIN')")
                 .anyRequest().authenticated()
                 .and().formLogin().loginPage("/login").permitAll()
                 .and().logout()
                 .logoutRequestMatcher(
                         new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login").permitAll()
-                .add()
+                .logoutSuccessUrl("/login").permitAll().permitAll()
+                .and()
                 .httpBasic();
 
                 http
